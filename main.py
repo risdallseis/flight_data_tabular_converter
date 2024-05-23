@@ -200,5 +200,5 @@ def convert_matlab_to_parquet(
 
 
 if __name__ == '__main__':
-    convert_matlab_to_parquet(mat_dir=sys.argv[0], parq_dir=sys.argv[1])
+    convert_matlab_to_parquet(mat_dir=sys.argv[1], parq_dir=sys.argv[2])
     exit()
