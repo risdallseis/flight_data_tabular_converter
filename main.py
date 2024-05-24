@@ -55,15 +55,10 @@ def up_sample_array(
         dtype=np.float32
     )
     # loop every Nsample_factor element and each element of input array
-    for i, val_index in zip(
-            range(0, output_array_length - sample_factor, sample_factor),
-            range(len(array))
-    ):
+    for val_index, i in enumerate(range(0, output_array_length, sample_factor)):
         # fill every Nsample_factor samples within each loop iteration
         resampled_array[i:i + sample_factor] = np.repeat(array[val_index], sample_factor)
-    # last value can get missed and left as empty (very small number)
-    resampled_array[-1] = array[-1]
-    
+
     return resampled_array
 
 
